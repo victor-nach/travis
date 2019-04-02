@@ -1,7 +1,5 @@
 module.exports = {
-    hello: () => {
-        return 'hello';
-    },
+    hello: () => 'hello',
     fine: () => 'fine' 
 }
 
