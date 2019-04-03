@@ -1,0 +1,36 @@
+{
+  "name": "travis",
+  "version": "1.0.0",
+  "description": "testing travis and co",
+  "main": "server/app.js",
+  "scripts": {
+    "start:dev": "babel-node server/app.js",
+    "start:nodemon": "nodemon --exec babel-node server/app.js",
+    "test": "nyc --reporter=text mocha server/test --require @babel/register || true",
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victor-nach/travis.git"
+  },
+  "author": "iheanacho victor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/victor-nach/travis/issues"
+  },
+  "homepage": "https://github.com/victor-nach/travis#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/register": "^7.4.0",
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.3",
+    "mocha": "^6.0.2",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^13.3.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.3"
+  }
+}
